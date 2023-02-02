@@ -1,10 +1,17 @@
 import React from 'react'
+import {BrowserRouter, Link, Route, Routes} from 'react-router-dom'
+import {Home, About, Contact} from './pages'
 
 const App = () => {
   return (
-    <div className="text-[100px] text-blue-600">
-      <h1>MG Investments, LLC</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
+
   )
 }
 
