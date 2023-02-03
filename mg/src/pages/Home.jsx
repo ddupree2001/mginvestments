@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Navbar from '../components/Navbar.jsx'
 import Header from '../components/Header.jsx'
+import Footer from '../components/Footer.jsx'
 import {AwesomeButton} from 'react-awesome-button'
 import 'react-awesome-button/dist/styles.css'
 import {FaFacebookF, FaLinkedinIn} from 'react-icons/fa'
@@ -10,6 +11,7 @@ import bigScreen from '../assets/bigScreen.png'
 import closeUp from '../assets/closeUp.png'
 import posterPic from '../assets/posterPic.png'
 import greenRoom from '../assets/greenRoom.png'
+import {Link} from 'react-router-dom'
 
 const Home = () => {
 
@@ -103,7 +105,7 @@ const Home = () => {
       <div className="bg-[#f0ffff]">
         <div className="flex justify-center">
           <div className="w-full max-w-[1400px] mx-[50px] relative">
-            <div className="flex justify-center py-[5vh]">
+            <div className="flex justify-center pt-[10vh] pb-[5vh]">
               <div className="max-w-[700px]">
                 <h1 className="text-[2.25rem] text-center mb-5">“ We provide housing stability for families and at risk youth that would otherwise have difficulty maintaining housing. ”</h1>
                 <div className="flex items-center gap-x-5">
@@ -112,20 +114,20 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-y-5 md:flex-row items-center py-[5vh] gap-x-5">
+            <div className="flex justify-between flex-col gap-y-5 md:flex-row items-center py-[5vh] gap-x-5">
               <div className="w-full md:w-1/2">
                 <h2 className="text-[2rem] mb-4 font-bold">Stabilizing families and communities by acquiring and renovating properties.</h2>
                 <p className="text-[1.25rem] mb-10">MG Investments, LLC is a community conscious real estate investment company that seeks opportunities to help individuals facing housing instability to obtain stable housing through the purchase, rental and sale of property and learning strategies for wealth building through an educational platform.</p>
                 <p className="text-[1.25rem] mb-10">MG Investments, LLC values the continuity of family and relationships and is driven by those values to create and maintain company financial stability and community housing stability through real estate investments and solid economic planning.</p>
                 <div>
-                  <button className="py-4 px-8 bg-[#3095df] rounded-full text-white">
+                  <Link to="/about"><button className="py-4 px-8 bg-[#3095df] rounded-full text-white">
                     Learn More
-                  </button>
+                  </button></Link>
                 </div>
               </div>
-              <img src={houses} alt="houses" className="hidden md:block w-full md:w-1/2"/>
+              <img src={houses} alt="houses" className="hidden md:block w-full md:w-2/5"/>
             </div>
-            <div className="flex flex-col-reverse md:flex-row items-center gap-x-16 gap-y-10 py-[5vh]">
+            <div className="flex justify-between flex-col-reverse md:flex-row items-center gap-x-16 gap-y-10 py-[5vh]">
               <div className="relative flex overflow-hidden w-3/5 h-3/5 md:w-1/3 md:h-1/3 rounded-lg">
                 {events.map((event, index) => (
                     <div className="flex-[0_0_100%] transition-transform ease-out duration-500" style={{transform: `translateX(-${curr*100}%)`}} key={index}>
@@ -185,6 +187,7 @@ const Home = () => {
           </div> 
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }
