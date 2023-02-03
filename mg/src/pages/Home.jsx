@@ -1,13 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Navbar from '../components/Navbar.jsx'
 import Header from '../components/Header.jsx'
 import {AwesomeButton} from 'react-awesome-button'
 import 'react-awesome-button/dist/styles.css'
 import {FaFacebookF, FaLinkedinIn} from 'react-icons/fa'
-import {AiFillInstagram} from 'react-icons/ai'
+import {AiFillInstagram, AiOutlineLeft, AiOutlineRight} from 'react-icons/ai'
 import houses from '../assets/houses.png'
 
 const Home = () => {
+
+  const [curr, setCurr] = useState(0)
+
+  const prev = () => setCurr((curr) => (curr === 0 ? events.length - 1 : curr - 1))
+  const next = () => setCurr((curr) => (curr === events.length - 1 ? 0 : curr + 1))
+
+  const events = [
+    {
+      image: houses
+    },
+  ]
+
   return (
     <div>
       <Header />
@@ -70,7 +82,6 @@ const Home = () => {
                 <button className="bg-[#3095df] text-white font-bold py-4 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit">
                   Receive Our Fair Offer
                 </button>
-
               </form>
             </div>
           </div>
@@ -100,6 +111,63 @@ const Home = () => {
                 </div>
               </div>
               <img src={houses} alt="houses" className="hidden md:block w-1/2 h-1/2"/>
+            </div>
+            <div className="flex items-center gap-x-5 py-[5vh]">
+              <div className="relative flex overflow-hidden w-1/2">
+                {events.map((event, index) => (
+                    <div className="flex-[0_0_100%] transition-transform ease-out duration-500" style={{transform: `translateX(-${curr*100}%)`}} key={index}>
+                      <img src={event.image} alt="event"/>
+                    </div>
+                ))}
+                <div className="absolute inset-0 flex items-center justify-between">
+                  <button onClick={prev}>
+                    <AiOutlineLeft size={40} color="black" />
+                  </button>
+                  <button onClick={next}>
+                    <AiOutlineRight size={40} color="black"/>
+                  </button>
+                </div>
+              </div>
+              <div className="w-1/2">
+                <h2 className="text-[2rem] mb-4 font-bold">Recent Events</h2>
+                <p className="text-[1.25rem]">Our founder was honored to be selected to share her Small Business experience with the Intuit Leadership Team in Los Angeles, California. Intuit is the parent company for QuickBooks. As a QuickBooks user, she was blessed to be able to have the assistance of Live Experts to get her QuickBooks up and running and now she can maintain it. Thank you Intuit for believing in her and encouraging her to continue on her path.</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center py-[5vh]">
+              <h2 className="text-[2.25rem] mb-4 font-bold">Core Competencies</h2>
+              <div className="w-[100px] h-[3px] bg-[#3095df] mb-16"></div>
+              <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center place-items-center xl:justify-between gap-10">
+                <div className="bg-white p-10 h-full group hover:bg-[#3095df]">
+                  <h1 className="text-[3rem] text-gray-200 text-right mb-4 group-hover:text-white">01.</h1>
+                  <h2 className="text-[1.5rem] mb-4 group-hover:text-white">Project Management</h2>
+                  <p className="group-hover:text-white">We specialize in planning, schedule management, resource management, and collaboration for our clients. Our professionals are industry leaders in high quality development management to ensure that we locate the right sites for our projects.</p>
+                </div>
+                <div className="bg-white p-10 h-full group hover:bg-[#3095df]">
+                  <h1 className="text-[3rem] text-gray-200 text-right mb-4 group-hover:text-white">02.</h1>
+                  <h2 className="text-[1.5rem] mb-4 group-hover:text-white">Financial Planning</h2>
+                  <p className="group-hover:text-white">Financial planning plays a big role in how we create our cash offers. Seeing that our main goal is to house those who can't afford to house themselves, we provide a great deal of attention towards financing our properties to ensure people will have stable homes.</p>
+                </div>
+                <div className="bg-white p-10 h-full group hover:bg-[#3095df]">
+                  <h1 className="text-[3rem] text-gray-200 text-right mb-4 group-hover:text-white">03.</h1>
+                  <h2 className="text-[1.5rem] mb-4 group-hover:text-white">REI Education</h2>
+                  <p className="group-hover:text-white">We aren't interested in keeping all of the knowledge to ourselves. MG Investments, LLC is dedicated to showing our clients and others how to use fundamental analysis and financial modeling to make smart real estate decisions.</p>
+                </div>
+                <div className="bg-white p-10 h-full group hover:bg-[#3095df]">
+                  <h1 className="text-[3rem] text-gray-200 text-right mb-4 group-hover:text-white">04.</h1>
+                  <h2 className="text-[1.5rem] mb-4 group-hover:text-white">Consultation Services</h2>
+                  <p className="group-hover:text-white">Our knowledge is yours! We provide expert advice and recommendations to our clients who are looking to purchase, sell, or develop property. Our consultation services are for people who are serious about growing their wealth through real estate.</p>
+                </div>
+                <div className="bg-white p-10 h-full group hover:bg-[#3095df]">
+                  <h1 className="text-[3rem] text-gray-200 text-right mb-4 group-hover:text-white">05.</h1>
+                  <h2 className="text-[1.5rem] mb-4 group-hover:text-white">Partnership Development</h2>
+                  <p className="group-hover:text-white">We're always looking for new partners to assist us in purchasing, developing, and leasing property. If you think your skills complement ours, we'd love to have you reach out and contact us to have a conversation about how we can work together.</p>
+                </div>
+                <div className="bg-white p-10 h-full group hover:bg-[#3095df]">
+                  <h1 className="text-[3rem] text-gray-200 text-right mb-4 group-hover:text-white">06.</h1>
+                  <h2 className="text-[1.5rem] mb-4 group-hover:text-white">Customer Relations</h2>
+                  <p className="group-hover:text-white">Our customers and clients are our number one priority. The relationships we build will last a lifetime and we're happy to make accommodations to ensure you're happy with our services.</p>
+                </div>
+              </div>
             </div>
           </div> 
         </div>
