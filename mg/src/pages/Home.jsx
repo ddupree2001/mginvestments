@@ -6,6 +6,10 @@ import 'react-awesome-button/dist/styles.css'
 import {FaFacebookF, FaLinkedinIn} from 'react-icons/fa'
 import {AiFillInstagram, AiOutlineLeft, AiOutlineRight} from 'react-icons/ai'
 import houses from '../assets/houses.png'
+import bigScreen from '../assets/bigScreen.png'
+import closeUp from '../assets/closeUp.png'
+import posterPic from '../assets/posterPic.png'
+import greenRoom from '../assets/greenRoom.png'
 
 const Home = () => {
 
@@ -16,7 +20,16 @@ const Home = () => {
 
   const events = [
     {
-      image: houses
+      image: bigScreen
+    },
+    {
+      image: closeUp
+    },
+    {
+      image: posterPic
+    },
+    {
+      image: greenRoom
     },
   ]
 
@@ -110,25 +123,25 @@ const Home = () => {
                   </button>
                 </div>
               </div>
-              <img src={houses} alt="houses" className="hidden md:block w-1/2 h-1/2"/>
+              <img src={houses} alt="houses" className="hidden md:block w-full md:w-1/2"/>
             </div>
-            <div className="flex items-center gap-x-5 py-[5vh]">
-              <div className="relative flex overflow-hidden w-1/2">
+            <div className="flex flex-col-reverse md:flex-row items-center gap-x-16 gap-y-10 py-[5vh]">
+              <div className="relative flex overflow-hidden w-3/5 h-3/5 md:w-1/3 md:h-1/3 rounded-lg">
                 {events.map((event, index) => (
                     <div className="flex-[0_0_100%] transition-transform ease-out duration-500" style={{transform: `translateX(-${curr*100}%)`}} key={index}>
-                      <img src={event.image} alt="event"/>
+                      <img src={event.image} alt="event" className="h-full w-full"/>
                     </div>
                 ))}
-                <div className="absolute inset-0 flex items-center justify-between">
-                  <button onClick={prev}>
-                    <AiOutlineLeft size={40} color="black" />
+                <div className="absolute inset-0 flex items-center justify-between p-1">
+                  <button onClick={prev} className="bg-[rgb(48,149,223)]/80 rounded-full p-1">
+                    <AiOutlineLeft size={30} color="black" />
                   </button>
-                  <button onClick={next}>
-                    <AiOutlineRight size={40} color="black"/>
+                  <button onClick={next} className="bg-[rgb(48,149,223)]/80 rounded-full p-1">
+                    <AiOutlineRight size={30} color="black"/>
                   </button>
                 </div>
               </div>
-              <div className="w-1/2">
+              <div className="w-full md:w-1/2">
                 <h2 className="text-[2rem] mb-4 font-bold">Recent Events</h2>
                 <p className="text-[1.25rem]">Our founder was honored to be selected to share her Small Business experience with the Intuit Leadership Team in Los Angeles, California. Intuit is the parent company for QuickBooks. As a QuickBooks user, she was blessed to be able to have the assistance of Live Experts to get her QuickBooks up and running and now she can maintain it. Thank you Intuit for believing in her and encouraging her to continue on her path.</p>
               </div>
