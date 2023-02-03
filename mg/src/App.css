@@ -6,12 +6,12 @@
     --button-raise-level: 6px;
     --button-hover-pressure: 2;
     --transform-speed: 0.185s;
-    --button-primary-color: #232323;
-    --button-primary-color-dark: #caab69;
+    --button-primary-color: #3095df;
+    --button-primary-color-dark: #2a86c9;
     --button-primary-color-light: #ffffff;
-    --button-primary-color-hover: #161616;
-    --button-primary-color-active: #141414;
-    --button-primary-border: 2px solid #caab69;
+    --button-primary-color-hover: #329eed;
+    --button-primary-color-active: #329eed;
+    --button-primary-border: 2px solid #3095df;
     --button-secondary-color: #070707;
     --button-secondary-color-dark: #caab69;
     --button-secondary-color-light: #ffffff;
@@ -34,9 +34,8 @@
 
 .home_background {
     position: relative;
-    background-image: linear-gradient(0deg, rgb(48, 149, 223, 0.2), rgb(48, 149, 223, 0.2)), url("assets/inside.jpg");
+    background-image: linear-gradient(0deg, rgba(48, 149, 223, 0.2), rgba(48, 149, 223, 0.2)), url("assets/inside.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
 }
