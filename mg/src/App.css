@@ -39,3 +39,19 @@
     background-size: cover;
     background-position: center;
 }
+
+.about_background {
+    position: relative;
+    background-image: linear-gradient(0deg, rgba(240, 255, 255, 0.7), rgba(240, 255, 255, 0.7)), url("assets/couch.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contact_background {
+    position: relative;
+    background-image: linear-gradient(0deg, rgba(240, 255, 255, 0.7), rgba(240, 255, 255, 0.7)), url("assets/candle.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

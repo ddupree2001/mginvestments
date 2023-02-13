@@ -1,6 +1,6 @@
 import React from 'react'
 import {BrowserRouter, Link, Route, Routes} from 'react-router-dom'
-import {Home, About, Contact} from './pages'
+import {Home, About, Contact, Terms, Privacy} from './pages'
 
 const App = () => {
   return (
@@ -9,6 +9,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/terms-of-use" element={<Terms />} />
+        <Route path="/privacy-policy" element={<Privacy />} />
       </Routes>
     </BrowserRouter>
 

@@ -15,8 +15,8 @@ const Footer = () => {
                 <div className="flex justify-between w-full md:w-[300px]">
                     <div>
                         <p className="text-[1.25rem] font-bold mb-5">Legal</p>
-                        <Link to="/"><p className="mb-3">Terms of Use</p></Link>
-                        <Link to="/"><p>Privacy Policy</p></Link>
+                        <Link to="/terms-of-use"><p className="mb-3">Terms of Use</p></Link>
+                        <Link to="/privacy-policy"><p>Privacy Policy</p></Link>
                     </div>
                     <div>
                         <p className="text-[1.25rem] font-bold mb-5">Quick Tabs</p>
