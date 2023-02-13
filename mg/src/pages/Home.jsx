@@ -55,11 +55,11 @@ const Home = () => {
               <form className="bg-white shadow-md rounded-lg w-full md:w-1/2 px-8 py-10 mb-4">
                 <h2 className="text-[2rem] mb-4 font-bold">Ready To Sell? Receive An Offer Now...</h2>
                 <p className="text-[1.25rem] mb-4">Our property specialists will give you a free, no-obligation consultation at your convenience. We buy houses all over the USA, and you choose the closing date! We are a black-owned, woman-owned business :)</p>
-                <div class="mb-4">
-                  <label className="block text-gray-700 text-base font-bold mb-2" for="fname">
+                <div className="mb-4">
+                  <label className="block text-gray-700 text-base font-bold mb-2" for="name">
                     Full Name
                   </label>
-                  <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-1 focus:outline-[#3095df] focus:shadow-outline" id="fname" type="text" placeholder="Full Name" required/>
+                  <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-1 focus:outline-[#3095df] focus:shadow-outline" id="name" type="text" placeholder="Full Name" required/>
                 </div>
                 <div className="mb-4">
                   <label className="block text-gray-700 text-base font-bold mb-2" for="address">
